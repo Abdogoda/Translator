@@ -1,0 +1,149 @@
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ outline: none;
+ border: none;
+ text-decoration: none;
+ list-style: none;
+}
+body {
+ font-family: "Times New Roman", Times, serif;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ overflow-x: hidden;
+ min-height: 100vh;
+}
+.container {
+ width: 600px;
+ max-width: 95%;
+ background-color: #ffff;
+ border-radius: 5px;
+ padding: 30px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 0 15px rgba(0, 0, 0, 0.25);
+}
+.wrapper {
+ border-radius: 5px;
+ border: 1px solid #bbb;
+}
+.text-input {
+ display: flex;
+ border-bottom: 1px solid #bbb;
+}
+.text-input textarea {
+ height: 220px;
+ width: 100%;
+ font-size: 18px;
+ border-radius: 5px;
+ background: none;
+ padding: 10px;
+ color: #000;
+ font-weight: 600;
+ resize: none;
+}
+.text-input textarea::placeholder {
+ color: #777;
+ font-weight: 100;
+}
+.text-input textarea:first-child {
+ border-top-right-radius: 0;
+ border-bottom-right-radius: 0;
+ border-right: 1px solid #bbb;
+}
+.controls {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 15px 20px;
+ gap: 10px;
+}
+.controls li {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 30px;
+}
+.controls select {
+ padding: 10px 15px;
+ color: #222;
+ font-weight: bold;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+}
+.controls li .icons {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ gap: 20px;
+ position: relative;
+}
+.controls .icons::before {
+ position: absolute;
+ content: "";
+ top: 0;
+ right: -20px;
+ width: 1px;
+ height: 100%;
+ background-color: #bbb;
+ border-radius: 5px;
+}
+.controls .icons:last-child:before {
+ left: -20px;
+}
+.controls li i {
+ color: #777;
+ cursor: pointer;
+ transition: all 0.3s linear;
+ transform: rotate(0);
+}
+.controls li i:hover {
+ color: #333;
+}
+.controls li.exchange i:hover {
+ transform: rotate(180);
+}
+button.translate {
+ width: 100%;
+ padding: 10px;
+ color: #fff;
+ font-weight: bold;
+ margin-top: 15px;
+ border-radius: 5px;
+ background-color: #f25;
+ cursor: pointer;
+ transition: all 0.3s linear;
+}
+button.translate:hover {
+ background-color: #c40a70;
+}
+@media (max-width: 772px) {
+ .text-input {
+  flex-direction: column;
+ }
+ .text-input textarea {
+  height: 100px;
+ }
+ .text-input textarea:first-child {
+  border-bottom-left-radius: 0;
+  border-right: none;
+  border-bottom: 1px solid #bbb;
+ }
+ .controls {
+  flex-direction: column;
+ }
+ .controls li {
+  width: 100%;
+ }
+ .exchange {
+  width: 100%;
+  justify-content: center !important;
+ }
+ .controls select {
+  width: calc(100% - 70px);
+ }
+ .controls li .icons {
+  width: 70px;
+  justify-content: flex-start;
+ }
+}
